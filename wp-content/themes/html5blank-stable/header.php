@@ -28,7 +28,7 @@
         });
     </script>
     <script type="text/javascript">
-        jQuery(document).ready(function(){
+        jQuery(document).ready(function($){
             jQuery('#demo1').skdslider({'delay':5000, 'animationSpeed': 2000,'showNextPrev':true,'showPlayButton':true,'autoSlide':true,'animationType':'fading'});
 
             jQuery('#responsive').change(function(){
@@ -46,7 +46,7 @@
         });
     </script>
     <script>
-        $(document).ready(function(){
+        jQuery(document).ready(function($){
             $(".dropdown").hover(
                 function() {
                     $('.dropdown-menu', this).stop( true, true ).slideDown("fast");

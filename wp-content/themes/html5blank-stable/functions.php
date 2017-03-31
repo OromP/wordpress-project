@@ -91,22 +91,22 @@ function html5blank_nav()
 function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-
-        wp_register_script('bars', get_template_directory_uri(),'/js/bars.js',array());
-        wp_enqueue_script('bars');
-        wp_register_script('bootstrap', get_template_directory(), '/js/bootstrap.js',array());
-        wp_enqueue_script('bootstrap');
-        wp_register_script('easing',get_template_directory(),'/js/easing.js',array());
-        wp_enqueue_script('easing');
-        wp_register_script('jqyery.flexslider',get_template_directory(),'/js/jquery.flexslider.js',array('jquery'));
-        wp_enqueue_script('jquery.flexslider');
-        wp_register_script('jquery-2.1.4.min',get_template_directory(),'/js/jquery-2.1.4.min.js',array('jquery'));
+        wp_register_script('jquery-2.1.4.min',get_template_directory_uri().'/js/jquery-2.1.4.min.js',array('jquery'));
         wp_enqueue_script('jquery-2.1.4.min');
-        wp_register_script('main',get_template_directory(),'/js/main.js',array());
+        wp_register_script('bars', get_template_directory_uri().'/js/bars.js',array());
+        wp_enqueue_script('bars');
+        wp_register_script('bootstrap', get_template_directory_uri(). '/js/bootstrap.js',array());
+        wp_enqueue_script('bootstrap');
+        wp_register_script('easing',get_template_directory_uri().'/js/easing.js',array());
+        wp_enqueue_script('easing');
+        wp_register_script('jqyery.flexslider',get_template_directory_uri().'/js/jquery.flexslider.js',array('jquery'));
+        wp_enqueue_script('jquery.flexslider');
+
+        wp_register_script('main',get_template_directory_uri().'/js/main.js',array());
         wp_enqueue_script('main');
-        wp_register_script('skdslider.min',get_template_directory(),'/js/skdslider.min.js',array());
+        wp_register_script('skdslider.min',get_template_directory_uri().'/js/skdslider.min.js',array('jquery'));
         wp_enqueue_script('skdslider.min');
-        wp_register_script('smoothbox.jquery2',get_template_directory(),'/js/smoothbox.jquery2.js',array('jquery'));
+        wp_register_script('smoothbox.jquery2',get_template_directory_uri().'/js/smoothbox.jquery2.js',array('jquery'));
         wp_enqueue_script('smoothbox.jquery2');
     	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
         wp_enqueue_script('conditionizr'); // Enqueue it!
@@ -118,6 +118,13 @@ function html5blank_header_scripts()
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
     }
 }
+add_action( 'wp_default_scripts', function( $scripts ) {
+    if ( ! empty( $scripts->registered['jquery'] ) ) {
+        $scripts->registered['jquery']->deps = array_diff( $scripts->registered['jquery']->deps, array( 'jquery-migrate' ) );
+    }
+} );
+
+
 
 // Load HTML5 Blank conditional scripts
 function html5blank_conditional_scripts()
@@ -132,17 +139,17 @@ function html5blank_conditional_scripts()
 function html5blank_styles()
 {
 
-    wp_register_style('bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css' ,array(), '1.0', 'all');
+    wp_register_style('bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css' ,array(), '', 'all');
     wp_enqueue_style('bootstrap');
-    wp_register_style('flexslider', get_template_directory_uri(). '/css/flexslider.css', array(), '1.0', 'all');
+    wp_register_style('flexslider', get_template_directory_uri(). '/css/flexslider.css', array(), '', 'all');
     wp_enqueue_style('flexslider');
-    wp_register_style('font-awesome', get_template_directory_uri(). '/css/font-awesome.min.css', array(), '1.0', 'all');
+    wp_register_style('font-awesome', get_template_directory_uri(). '/css/font-awesome.min.css', array(), '', 'all');
     wp_enqueue_style('font-awesome');
     wp_register_style('skdslider', get_template_directory_uri(). '/css/skdslider.css',   array(),'','all');
     wp_enqueue_style('skdslider');
     wp_register_Style('smoothbox', get_template_directory_uri(). '/css/smoothbox.css',array(),  '','all');
     wp_enqueue_style('smoothbox');
-    wp_register_style('style', get_template_directory_uri(). '/css/style.css', array(), '1.0','all');
+    wp_register_style('style', get_template_directory_uri(). '/css/style.css', array(), '','all');
     wp_enqueue_style('style');
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!

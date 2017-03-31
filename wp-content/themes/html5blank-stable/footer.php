@@ -1,6 +1,5 @@
 			<!-- footer -->
-			<footer class="footer" role="contentinfo">
-                <div class="footer-agile-info">
+                <footer class="footer-agile-info">
                     <div class="container">
                         <div class="col-md-4 w3layouts-footer">
                             <h3>Contact Information</h3>
@@ -22,8 +21,10 @@
                             </form>
                         </div>
                     </div>
-                </div>
-				<!-- copyright -->
+
+            </footer>
+
+            <!-- copyright -->
                 <div class="copyright">
                     <div class="container">
                         <div class="w3agile-list">
@@ -39,20 +40,20 @@
                             </ul>
                         </div>
                         <div class="agileinfo">
+                            <p class="copyright">
+                                &copy; <?php echo date('Y'); ?>Fashion Blog. All Rights Reserved. Design by <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
+                                <a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
+                            </p>
                             <p>© 2017 Fashion Blog . All Rights Reserved . Design by <a href="http://w3layouts.com/">W3layouts</a></p>
                         </div>
                     </div>
                 </div>
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-				</p>
+
 				<!-- /copyright -->
 
-			</footer>
 			<!-- /footer -->
 
-		</div>
+
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
@@ -67,5 +68,4 @@
 		ga('send', 'pageview');
 		</script>
 
-	</body>
-</html>
+
