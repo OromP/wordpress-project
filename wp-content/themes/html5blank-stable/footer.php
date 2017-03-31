@@ -41,10 +41,10 @@
                         </div>
                         <div class="agileinfo">
                             <p class="copyright">
-                                &copy; <?php echo date('Y'); ?>Fashion Blog. All Rights Reserved. Design by <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
+                                &copy; <?php echo date('Y'); ?> Fashion Blog. All Rights Reserved. Design by <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
                                 <a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
                             </p>
-                            <p>© 2017 Fashion Blog . All Rights Reserved . Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+                            <
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,21 @@
 				<!-- /copyright -->
 
 			<!-- /footer -->
+            <script>
+            jQuery(document).ready(function() {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+            */
 
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+            });
+            </script>
 
 		<!-- /wrapper -->
 

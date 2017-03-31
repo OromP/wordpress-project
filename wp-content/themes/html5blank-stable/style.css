@@ -1,3 +1,4 @@
+
 /*
 	Theme Name: Testing
 	Theme URI: http://html5blank.com
@@ -122,7 +123,7 @@ input:focus {
 \*------------------------------------*/
 
 @font-face {
-	font-family:'Font-Name';
+	font-family:'Roboto Condensed';
 	src:url('fonts/FontAwesome.otf');
 	src:url('fonts/fontawesome-webfont.eot'),
 		url('fonts/fontawesome-webfont.ttf'),
